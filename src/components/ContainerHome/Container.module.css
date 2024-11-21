@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+body {
+  background-color: #B2B2B2;
+  margin-top: auto;
+}
+
+.maincontent {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+}
+
+.illustration {
+  width: 100%;                 /* Ocupará toda a largura disponível */
+  max-width: 500px;            /* Largura máxima em telas maiores */
+  margin: 0 auto;              /* Centraliza o contêiner horizontalmente */
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: padding 0.3s ease, max-width 0.3s ease;
+}
+
+.illustrationimg {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos responsivos para tablets */
+@media screen and (max-width: 768px) {
+  .illustration {
+      padding: 1.5rem;        /* Reduz o padding para telas menores */
+      max-width: 400px;       /* Diminui a largura máxima em tablets */
+  }
+}
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 480px) {
+  .illustration {
+      padding: 1rem;          /* Reduz ainda mais o padding em dispositivos móveis */
+      max-width: 100%;        /* Garante que ocupe 100% da largura disponível */
+      border-radius: 15px;    /* Um pouco menos arredondado em telas menores */
+  }
+  
+  .maincontent {
+      margin: 1rem auto;     /* Ajusta a margem superior em telas pequenas */
+  }
+}

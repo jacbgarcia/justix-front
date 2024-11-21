@@ -1,0 +1,31 @@
+.banner{
+    width: 20%;
+    min-width: fit-content;
+    max-height: 30rem;
+    height: 160px;
+    min-height: fit-content;
+    background-image: url('/public/images/4452392.jpg');
+    background-size:cover;
+    background-position: center;
+    border-radius: 10px;
+    padding-right: 50px;
+    margin:auto;
+    top: 20px;
+    padding-top: 0;
+}
+/* Media Query para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .banner {
+        width: 100%;           /* O banner ocupará 100% da largura do contêiner em telas menores */
+        height: 200px;         /* Define uma altura fixa em dispositivos móveis */
+        max-width: 100%;       /* Garante que o banner não seja maior que a tela */
+        min-width: 280px;      /* Largura mínima garantida em dispositivos móveis */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        width: 100%;           /* O banner ocupa 100% da largura em telas muito pequenas */
+        height: 160px;         /* Ajuste de altura para dispositivos muito pequenos */
+    }
+}

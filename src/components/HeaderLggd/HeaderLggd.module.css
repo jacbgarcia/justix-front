@@ -1,0 +1,613 @@
+/* Base styles */
+body {
+  background-color: #B2B2B2;
+  padding-top: 70px;
+  margin: 0;
+}
+
+.navbar {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #D9D9D9;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: padding 0.3s ease;
+}
+
+/* Brand styles */
+.brand {
+  color: #4169E1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: font-size 0.3s ease;
+}
+
+.brandL {
+  text-decoration: none;
+}
+
+/* Search container styles */
+.searchContainer {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 2rem;
+  position: relative;
+}
+
+.searchForm {
+  width: 100%;
+}
+
+.searchWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px 0 0 4px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.searchButton {
+  padding: 0.5rem 1rem;
+  background-color: #4169E1;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchButton:hover {
+  background-color: #3557b7;
+}
+
+/* Navigation styles */
+.navleft {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn, .userButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001;
+  border-radius: 4px;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.dropdownContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownContent a:hover {
+  background-color: #f0f0f0;
+}
+
+/* User styles */
+.usuario {
+  min-width: 2rem;
+  min-height: 2rem;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+/* Sidebar/Mobile popup styles */
+.sidebar, .mobileContainer {
+  position: fixed;
+  background-color: white;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  z-index: 1002;
+}
+
+.sidebar {
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  transition: right 0.3s ease;
+}
+
+.sidebar.show {
+  right: 0;
+}
+
+.mobileContainer {
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 320px;
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobileContainer.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Content styles */
+.sidebarContent, .mobilePopup {
+  padding: 1.5rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.userHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.userName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.menuItem {
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 8px;
+}
+
+.menuItem:hover {
+  background-color: #f5f5f5;
+}
+
+.userDetails {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+
+.progressContainer {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Search results styles */
+.megaMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 998;
+  border-radius: 4px;
+}
+
+.megaMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.megaMenu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.activeItem {
+  color: #4169E1;
+}
+
+.activeItem a {
+  color: #4169E1;
+}
+
+/* Close button styles */
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .navleft {
+    display: none;
+  }
+  
+  .hamburgerMenu {
+    display: flex;
+    margin-right: 8%;
+    padding-top: 5px;    
+  }
+  
+  .mobileMenu {
+    display: block;
+    height: 100%;
+  }
+
+  .navbar {
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  .brand {
+      font-size: 1.2rem;
+  }
+
+  .searchContainer {
+      margin: 0 0.5rem;
+      max-width: none;
+  }
+
+  .searchInput {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+  }
+
+  .searchButton {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+  }
+
+  .usuario {
+      min-width: 1.75rem;
+      min-height: 1.75rem;
+      font-size: 0.75rem;
+  }
+
+  .sidebar {
+      display: none;
+  }
+
+  .mobileContainer {
+      display: block;
+  }
+
+  .dropdownContent {
+      right: -40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+
+  .brand {
+      font-size: 1.1rem;
+  }
+
+  .searchContainer {
+      margin: 0 0.3rem;
+  }
+
+  .navleft {
+      gap: 15px;
+  }
+
+  .usuario {
+      min-width: 1.5rem;
+      min-height: 1.5rem;
+  }
+
+  .dropbtn {
+      font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .navbar {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.3rem;
+  }
+
+  .brand {
+      font-size: 1rem;
+      text-align: center;
+  }
+
+  .searchContainer {
+      margin: 0.3rem;
+  }
+
+  .searchWrapper {
+      flex-direction: column;
+      gap: 0.3rem;
+  }
+
+  .searchInput, .searchButton {
+      border-radius: 4px;
+  }
+}
+
+
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001; /* Same as overlay */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobileMenuOverlay.open {
+  display: block;
+  opacity: 1;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background-color: white;
+  z-index: 1002; /* Above overlay */
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.mobileMenu.open {
+  right: 0;
+}
+
+
+
+/* Rest of the existing styles remain the same... */
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.mobileMenuHeader h3 {
+  margin: 0;
+}
+
+.mobileMenuContent {
+  padding: 1rem;
+}
+
+.mobileMenuButton {
+  width: 100%;
+  padding: 0.75rem;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.mobileSearchOptions {
+  display: none;
+  padding-left: 1rem;
+}
+
+.mobileSearchOptions.open {
+  display: block;
+}
+
+.mobileSearchOptions a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Hamburger Menu Button */
+.hamburgerMenu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburgerMenu span {
+  width: 2rem;
+  height: 0.25rem;
+  background: #333;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+/* Desktop/Mobile visibility */
+.desktopOnly {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .desktopOnly {
+      display: none;
+  }
+
+  .hamburgerMenu {
+      display: flex;
+  }
+
+}
+
+/* Adjust userPanel styling for mobile */
+.userPanelContent {
+  padding: 1rem;
+  background: white;
+}
+
+.mobileMenuContent .userPanelContent {
+  border-top: 1px solid #eee;
+  margin-top: 1rem;
+}
+
+.mobileMenuContent button{
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  border-style: none;
+  background-color: white;
+}
+.mobileMenuContent span{
+  margin-top: 2rem;
+  padding-top: 0.2rem;
+}
+
+/* Ensure sidebar appears above overlay */
+.sidebar {
+  z-index: 1002; /* Same as mobile menu */
+}
+
+.progressContainer {
+  width: 100%; /* largura total disponível */
+  max-width: 400px; /* ajuste de largura máxima */
+  padding: 10px;
+  text-align: center;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de progresso (fundo) */
+.progressBar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0; /* Cor do fundo da barra */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* Preenchimento da barra (a parte dinâmica) */
+.progressFill {
+  height: 100%;
+  background-color: #4169E1; /* Cor verde para o progresso */
+  transition: width 0.3s ease-in-out; /* animação suave */
+  border-radius: 10px 0 0 10px; /* arredondar a borda esquerda */
+}
+
+/* Texto da barra de progresso */
+.progressText {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Estilo para o botão de gerar token */
+.rewardButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: white;
+  background-color: #ff9800; /* Cor laranja para o botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.rewardButton:hover {
+  background-color: #e68900; /* Cor mais escura ao passar o mouse */
+}
+
+.rewardButton:disabled {
+  background-color: #ccc; /* Cor desativada */
+  cursor: not-allowed;
+}
