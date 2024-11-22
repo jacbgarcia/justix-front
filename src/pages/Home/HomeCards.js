@@ -3,6 +3,8 @@ import CarouselCustom from '../../components/Carrosel/CarouselCustom';
 import axios from 'axios';
 import { Star } from 'lucide-react';
 
+const API_BASE_URL = 'https://justix-back.vercel.app';
+
 function HomeCards() {
     const [tribunais, setTribunais] = useState([]);
     const [foruns, setForuns] = useState([]);
@@ -23,18 +25,18 @@ function HomeCards() {
     const getImageUrl = (type, imagem) => {
         if (!imagem) return null;
         if (imagem.startsWith('/uploads/')) {
-            return `https://justix-back.vercel.app${imagem}`;
+            return `${API_BASE_URL}${imagem}`;
         }
-        return `https://justix-back.vercel.app/uploads/${type}/${imagem}`;
+        return `${API_BASE_URL}/uploads/${type}/${imagem}`;
     };
 
     const fetchDataWithWeightedAverage = async (endpoint, setStateFunc, ratingEndpoint, idField) => {
         try {
-            const res = await axios.get(`https://justix-back.vercel.app/${endpoint}`);
+            const res = await axios.get(`${API_BASE_URL}/${endpoint}`);
             const entidadesWithRatings = await Promise.all(
                 res.data.map(async (entidade) => {
                     try {
-                        const ratingRes = await axios.get(`https://justix-back.vercel.app/${ratingEndpoint}/${entidade[idField]}`);
+                        const ratingRes = await axios.get(`${API_BASE_URL}/${ratingEndpoint}/${entidade[idField]}`);
                         const mediaPonderada = parseFloat(ratingRes.data.media_ponderada) || 0;
 
                         return {
