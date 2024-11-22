@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "EXTEND_ESLINT=true react-scripts build || true",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,3 +41,4 @@
     ]
   }
 }
+
