@@ -6,6 +6,7 @@ import styles from "../../Home/FMediacoes/Feed.module.css";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer/index";
 import Cadastro from '../../Cadastro';
+import Login from '../../Login';
 
 const API_BASE_URL = 'https://justix-back.vercel.app';
 
@@ -13,6 +14,7 @@ const FeedMediacao = () => {
     const { id_mediador } = useParams();
     const [comments, setComments] = useState([]);
     const [isCadastroOpen, setIsCadastroOpen] = useState(false);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [averageRatings, setAverageRatings] = useState({
         av_satisfacao: 0,
         av_imparcialidade: 0,
@@ -377,9 +379,17 @@ const FeedMediacao = () => {
                     </div>
                 </div>
             </div>
+            <Login 
+        isOpen={isLoginOpen}
+        onClose={() => setIsLoginOpen(false)}
+      />
             <Cadastro 
         isOpen={isCadastroOpen}
         onClose={() => setIsCadastroOpen(false)}
+        onSwitchToLogin={() => {
+            setIsCadastroOpen(false);
+            setIsLoginOpen(true);
+          }}
       />
             <Footer />
         </>

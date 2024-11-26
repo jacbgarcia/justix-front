@@ -14,12 +14,12 @@ function HomeCards() {
     const [portais, setPortais] = useState([]);
 
     const sections = [
-        { name: 'Destaques em: Tribunais', items: tribunais || [] },
-        { name: 'Destaques em: Fóruns', items: foruns || [] },
-        { name: 'Destaques em: Audiências', items: juiz || [] },
-        { name: 'Destaques em: Mediações', items: mediador || [] },
-        { name: 'Destaques em: Advocacia', items: advocacia || [] },
-        { name: 'Destaques em: Portais', items: portais || [] }
+        { name: 'Destaques em Tribunais', items: tribunais || [] },
+        { name: 'Destaques em Fóruns', items: foruns || [] },
+        { name: 'Destaques em Audiências', items: juiz || [] },
+        { name: 'Destaques em Mediações', items: mediador || [] },
+        { name: 'Destaques em Advocacia', items: advocacia || [] },
+        { name: 'Destaques em Portais', items: portais || [] }
     ].filter(section => section.items && section.items.length > 0);
 
     const getImageUrl = (type, imagem) => {

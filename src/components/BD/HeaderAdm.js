@@ -313,7 +313,7 @@ function HeaderAdm({ children }) {
     return (
         <header>
             <nav className={styles.navbar}>
-                <Link to="/user/" className={styles.brandL}>
+                <Link to="/admin/dashboard/tribunais" className={styles.brandL}>
                     <span className={styles.brand}>JUSTIX</span>
                 </Link>
 
@@ -411,12 +411,12 @@ function HeaderAdm({ children }) {
                         Opções de busca {isMobileSearchOptionsOpen ? '▼' : '▶'}
                     </button>
                     <div className={`${styles.mobileSearchOptions} ${isMobileSearchOptionsOpen ? styles.open : ''}`}>
-                        <Link to="/user/tribunais" onClick={handleMobileMenuClick}>Tribunais</Link>
-                        <Link to="/user/foruns" onClick={handleMobileMenuClick}>Fóruns</Link>
-                        <Link to="/user/juiz" onClick={handleMobileMenuClick}>Juiz</Link>
-                        <Link to="/user/mediacoes" onClick={handleMobileMenuClick}>Mediação</Link>
-                        <Link to="/user/advocacia" onClick={handleMobileMenuClick}>Advocacia</Link>
-                        <Link to="/user/portais" onClick={handleMobileMenuClick}>Portais</Link>
+                        <Link to="/admin/dashboard/tribunais" onClick={handleMobileMenuClick}>Tribunais</Link>
+                        <Link to="/admin/dashboard/foruns" onClick={handleMobileMenuClick}>Fóruns</Link>
+                        <Link to="/admin/dashboard/juiz" onClick={handleMobileMenuClick}>Juiz</Link>
+                        <Link to="/admin/dashboard/mediacoes" onClick={handleMobileMenuClick}>Mediação</Link>
+                        <Link to="/admin/dashboard/advocacia" onClick={handleMobileMenuClick}>Advocacia</Link>
+                        <Link to="/admin/dashboard/portais" onClick={handleMobileMenuClick}>Portais</Link>
                     </div>
                     <button
                         className={styles.mobileUserButton}

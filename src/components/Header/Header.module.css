@@ -157,8 +157,10 @@
 
 
 @media screen and (max-width: 768px) {
+  header{
+    padding-top: 6%;
+  }
   .navbar {
-    padding: 0.5rem 1rem;
     width: 100%;
   }
   
