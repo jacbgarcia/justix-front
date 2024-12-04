@@ -20,10 +20,10 @@ const AudienciasListPageUserL = () => {
       const juizWithRatings = await Promise.all(
         res.data.map(async (juiz) => {
           try {
-            // Buscar a média ponderada
+       
             const ratingRes = await axios.get(`${API_BASE_URL}/juiz_avaliacao/${juiz.id_juiz}`);
             
-            // Buscar total de avaliações
+       
             const avaliacoesRes = await axios.get(`${API_BASE_URL}/av_juiz/${juiz.id_juiz}`);
             
             return {
@@ -64,14 +64,11 @@ const AudienciasListPageUserL = () => {
     return isNaN(numRating) ? "0.0" : numRating.toFixed(1);
   };
 
-  // Função para filtrar juiz baseado no termo de busca e filtro ativo
   const getFilteredAudiencias = () => {
-    // Primeiro aplica o filtro de busca
     let filtered = juiz.filter(juiz => 
       juiz.nome.toLowerCase().includes(searchTerm.toLowerCase()) 
     );
 
-    // Depois aplica o filtro de categoria
     switch (activeFilter) {
       case 'mais-avaliados':
         filtered = filtered.sort((a, b) => b.total_avaliacoes - a.total_avaliacoes);
@@ -79,7 +76,7 @@ const AudienciasListPageUserL = () => {
       case 'melhor-classificacao':
         filtered = filtered.sort((a, b) => b.media_ponderada - a.media_ponderada);
         break;
-      default: // 'todos'
+      default: 
         filtered = filtered.sort((a, b) => a.nome.localeCompare(b.nome));
         break;
     }

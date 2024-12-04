@@ -116,7 +116,6 @@
     border: 1px solid #f5c6cb;
 }
 
-/* Desktop styles */
 @media (min-width: 768px) {
     .cadastroContainer {
         width: 400px;
@@ -128,7 +127,6 @@
     }
 }
 
-/* Mobile styles */
 @media (max-width: 767px) {
     .cadastroContainer {
         width: 90%;

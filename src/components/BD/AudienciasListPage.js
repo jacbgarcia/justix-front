@@ -6,7 +6,7 @@ import style from '../Card/Card.module.css';
 const AudienciasListPageO = () => {
   const [juizes, setJuizes] = useState([]);
   const [filteredJuizes, setFilteredJuizes] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(''); // Estado para o termo de busca
+  const [searchTerm, setSearchTerm] = useState(''); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const AudienciasListPageO = () => {
     try {
       const res = await axios.get('https://justix-back.vercel.app/juiz');
       
-      // Buscar as avaliações atualizadas para cada fórum
+      
       const juizWithRatings = await Promise.all(
         res.data.map(async (juiz) => {
           try {
@@ -50,7 +50,7 @@ const AudienciasListPageO = () => {
 
     try {
       await axios.delete(`https://justix-back.vercel.app/juiz/${id}`);
-      listarJuizes(); // Atualiza a lista após a exclusão
+      listarJuizes(); 
     } catch (err) {
       console.error('Erro ao excluir juiz:', err);
     }
@@ -62,19 +62,19 @@ const AudienciasListPageO = () => {
 
   const getImagemUrl = (imagem) => {
     if (!imagem) return null;
-    // Verifique se a imagem já contém o prefixo
+    
     if (imagem.startsWith('/uploads/juiz/')) {
-      return `https://justix-back.vercel.app/${imagem}`; // Apenas retorna a URL completa
+      return `https://justix-back.vercel.app/${imagem}`; 
     }
-    return `https://justix-back.vercel.app/uploads/juiz/${imagem}`; // Adiciona o prefixo se não estiver presente
+    return `https://justix-back.vercel.app/uploads/juiz/${imagem}`; 
   };
 
-  // Função para lidar com a mudança do campo de busca
+ 
   const handleSearchChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
 
-    // Filtra juízes com base no termo de busca
+    
     const filtered = juizes.filter(juiz => 
       juiz.nome.toLowerCase().includes(term.toLowerCase())
     );
@@ -96,7 +96,7 @@ const AudienciasListPageO = () => {
         placeholder="Buscar..."
         value={searchTerm}
         onChange={handleSearchChange}
-        className={style.searchInput} // Adicione uma classe de estilo, se desejar
+        className={style.searchInput} 
       />
 
       {/* Renderização dos juízes filtrados */}

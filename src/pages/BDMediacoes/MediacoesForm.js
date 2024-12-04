@@ -1,4 +1,3 @@
-// src/pages/Foruns/ForunsFormPage.js
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MediacoesFormPageO from '../../components/BD/MediacoesFormPage';
@@ -11,7 +10,7 @@ const MediacoesFormPage = () => {
   const mediadorAtivo = location.state?.mediador || null;
 
   const handleSave = async (mediador) => {
-    // Lógica de salvamento via API
+    
     navigate('/admin/dashboard/mediador');
   };
 

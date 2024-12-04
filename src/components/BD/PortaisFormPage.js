@@ -12,7 +12,7 @@ const PortaisFormPageO = () => {
   const [formData, setFormData] = useState({
     nome: '',
     url: '',
-    avaliacao_media: 2.00 // valor padrão conforme backend
+    avaliacao_media: 2.00 
   });
 
   const [imagemFile, setImagemFile] = useState(null);
@@ -27,9 +27,9 @@ const PortaisFormPageO = () => {
         avaliacao_media: portaisAtivo.avaliacao_media || 2.00
       });
       
-      // Corrigindo a URL do preview
+      
       if (portaisAtivo.imagem) {
-        // Remove o /uploads/ duplicado se necessário
+        
         const imagemPath = portaisAtivo.imagem.startsWith('/uploads/') 
           ? portaisAtivo.imagem 
           : `/uploads/${portaisAtivo.imagem}`;
@@ -41,7 +41,7 @@ const PortaisFormPageO = () => {
   const handleImagemChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+      if (file.size > 5 * 1024 * 1024) { 
         setError('Arquivo muito grande. Máximo 5MB.');
         return;
       }
@@ -58,7 +58,7 @@ const PortaisFormPageO = () => {
       setError(null);
       const submitFormData = new FormData();
       
-      // Validação da URL
+     
       try {
         new URL(formData.url);
       } catch (e) {
@@ -66,18 +66,18 @@ const PortaisFormPageO = () => {
         return;
       }
 
-      // Adiciona os campos ao FormData
+      
       submitFormData.append('nome', formData.nome);
       submitFormData.append('url', formData.url);
       submitFormData.append('avaliacao_media', formData.avaliacao_media);
 
-      // Adiciona a imagem apenas se uma nova imagem foi selecionada
+      
       if (imagemFile) {
         submitFormData.append('imagem', imagemFile);
       }
 
       if (portaisAtivo) {
-        // Corrigindo o nome do parâmetro ID
+       
         const response = await axios.put(
           `https://justix-back.vercel.app/portais/${portaisAtivo.id_portal || portaisAtivo.id_portais}`,
           submitFormData,

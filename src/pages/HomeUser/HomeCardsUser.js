@@ -68,7 +68,7 @@ function HomeCards() {
                 })
             );
 
-            // Ordena por média ponderada (maior para menor) e pega os 8 primeiros
+      
             const topEntidades = entidadesWithRatings
                 .sort((a, b) => b.media_ponderada - a.media_ponderada)
                 .slice(0, 8);

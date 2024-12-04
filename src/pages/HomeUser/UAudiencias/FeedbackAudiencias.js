@@ -32,7 +32,7 @@ const FeedbackAudiencia = ({ id_juiz }) => {
 
   const updateUserProgress = (userId) => {
     const currentProgress = parseInt(localStorage.getItem(`userProgress_${userId}`)) || 0;
-    const newProgress = Math.min(currentProgress + 50, 1000); // Add 50 points per submission, max 1000
+    const newProgress = Math.min(currentProgress + 50, 1000); 
     localStorage.setItem(`userProgress_${userId}`, newProgress.toString());
   };
 
@@ -106,7 +106,6 @@ const FeedbackAudiencia = ({ id_juiz }) => {
         id_usuario: parseInt(user.id, 10)
       });
 
-      // Update progress after successful submission
       updateUserProgress(user.id);
       
       setSuccess(true);

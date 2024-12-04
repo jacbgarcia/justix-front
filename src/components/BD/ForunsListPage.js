@@ -17,7 +17,7 @@ const ForunsListPageO = () => {
     try {
       const res = await axios.get('https://justix-back.vercel.app/foruns');
       
-      // Buscar as avaliações atualizadas para cada fórum
+      
       const forunsWithRatings = await Promise.all(
         res.data.map(async (forum) => {
           try {

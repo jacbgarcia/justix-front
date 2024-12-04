@@ -6,7 +6,7 @@ import style from '../Card/Card.module.css';
 const MediacoesListPageO = () => {
   const [mediador, setMediadores] = useState([]);
   const [filteredMediadores, setFilteredMediadores] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(''); // Estado para o termo de busca
+  const [searchTerm, setSearchTerm] = useState(''); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const MediacoesListPageO = () => {
     try {
       const res = await axios.get('https://justix-back.vercel.app/mediador');
       
-      // Buscar as avaliações atualizadas para cada fórum
+      
       const mediadorWithRatings = await Promise.all(
         res.data.map(async (mediador) => {
           try {
@@ -50,7 +50,7 @@ const MediacoesListPageO = () => {
 
     try {
       await axios.delete(`https://justix-back.vercel.app/mediador/${id}`);
-      listarMediadores(); // Atualiza a lista após a exclusão
+      listarMediadores(); 
     } catch (err) {
       console.error('Erro ao excluir mediador:', err);
     }
@@ -68,12 +68,12 @@ const MediacoesListPageO = () => {
     return `https://justix-back.vercel.app/uploads/mediador/${imagem}`;
   };
 
-  // Função para lidar com a mudança do campo de busca
+  
   const handleSearchChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
 
-    // Filtra mediadores com base no termo de busca
+    
     const filtered = mediador.filter(mediador =>
       mediador.nome.toLowerCase().includes(term.toLowerCase())
     );
@@ -94,7 +94,7 @@ const MediacoesListPageO = () => {
         placeholder="Buscar..."
         value={searchTerm}
         onChange={handleSearchChange}
-        className={style.searchInput} // Adicione uma classe de estilo, se desejar
+        className={style.searchInput} 
       />
 
       {/* Renderização dos mediadores filtrados */}

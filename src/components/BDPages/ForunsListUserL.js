@@ -20,10 +20,8 @@ const ForunsListPageUserL = () => {
       const forunsWithRatings = await Promise.all(
         res.data.map(async (forum) => {
           try {
-            // Buscar a média ponderada
             const ratingRes = await axios.get(`${API_BASE_URL}/foruns_avaliacao/${forum.id_forum}`);
             
-            // Buscar total de avaliações
             const avaliacoesRes = await axios.get(`${API_BASE_URL}/av_foruns/${forum.id_forum}`);
             
             return {
@@ -64,15 +62,12 @@ const ForunsListPageUserL = () => {
     return isNaN(numRating) ? "0.0" : numRating.toFixed(1);
   };
 
-  // Função para filtrar foruns baseado no termo de busca e filtro ativo
   const getFilteredForuns = () => {
-    // Primeiro aplica o filtro de busca
     let filtered = foruns.filter(forum => 
       forum.nome.toLowerCase().includes(searchTerm.toLowerCase()) || 
       forum.endereco.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Depois aplica o filtro de categoria
     switch (activeFilter) {
       case 'mais-avaliados':
         filtered = filtered.sort((a, b) => b.total_avaliacoes - a.total_avaliacoes);
@@ -80,7 +75,7 @@ const ForunsListPageUserL = () => {
       case 'melhor-classificacao':
         filtered = filtered.sort((a, b) => b.media_ponderada - a.media_ponderada);
         break;
-      default: // 'todos'
+      default:
         filtered = filtered.sort((a, b) => a.nome.localeCompare(b.nome));
         break;
     }

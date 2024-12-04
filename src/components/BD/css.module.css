@@ -94,7 +94,6 @@
     background-color: #c53030;
   }
   
-  /* Responsive adjustments */
   @media (max-width: 640px) {
     .loginContainer {
       padding: 1.5rem;

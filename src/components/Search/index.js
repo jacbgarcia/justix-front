@@ -8,7 +8,6 @@ const SearchSection = ({ onSearch, activeFilters }) => {
         const value = e.target.value;
         setSearchTerm(value);
         if (onSearch) {
-            // Chama onSearch com o termo de pesquisa e os filtros ativos
             onSearch(value, activeFilters);
         }
     };

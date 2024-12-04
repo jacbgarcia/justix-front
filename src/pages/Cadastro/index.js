@@ -145,7 +145,7 @@ function Cadastro({ isOpen, onClose, onSwitchToLogin }) {
                 });
                 setTimeout(() => {
                     onClose();
-                    onSwitchToLogin(); // Chama a troca para o login
+                    onSwitchToLogin(); 
                 }, 2000);
             } else {
                 throw new Error(data.error || 'Erro ao realizar cadastro');

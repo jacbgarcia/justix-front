@@ -1,4 +1,4 @@
-// src/pages/Usuarios/UsuariosListPage.js
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import UsuariosList from './UsuariosList';

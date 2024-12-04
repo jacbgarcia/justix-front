@@ -44,12 +44,12 @@ const TribunaisFormPageO = () => {
     try {
       const submitFormData = new FormData();
       
-      // Adiciona todos os campos do formulário ao FormData
+    
       Object.keys(formData).forEach(key => {
         submitFormData.append(key, formData[key]);
       });
 
-      // Adiciona a imagem apenas se uma nova imagem foi selecionada
+     
       if (imagemFile) {
         submitFormData.append('imagem', imagemFile);
       }

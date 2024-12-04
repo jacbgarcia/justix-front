@@ -93,7 +93,7 @@ const FeedForuns = () => {
     const calculateRatingStats = (commentsData) => {
         const newStats = { ...ratingStats };
         
-        // Calcula stats para categorias normais
+        
         Object.keys(ratingCategories).forEach(category => {
             if (category !== 'weighted') {
                 const stats = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
@@ -107,7 +107,7 @@ const FeedForuns = () => {
             }
         });
     
-        // Calcula stats para weighted
+        
         const weightedStats = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
         commentsData.forEach(comment => {
             const weightedRating = calculateWeightedRating(comment);

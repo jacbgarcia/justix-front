@@ -1,4 +1,3 @@
-/* FeedbackTribunal.css */
 .feedback-container {
     max-width: 800px;
     margin: 2rem auto;
@@ -153,7 +152,6 @@
     font-size: 14px;
   }
   
-  /* Responsividade */
   @media (max-width: 768px) {
     .feedback-container {
       margin: 1rem;

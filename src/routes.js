@@ -5,8 +5,6 @@ import ForunsList from "./pages/BDForuns/ForunsList";
 import ForunsForm from "./pages/BDForuns/ForunsForm";
 import React, { useState } from 'react';
 import Forunsindex from "./pages/Foruns/Forunsindex";
-import ForunsindexFeed from "./pages/Foruns/Feedback/ForunsindexFeed";
-import ForunsForms from "./pages/Foruns/Feedback/ForunsForms";
 import AdvocaciasList from "./pages/BDAdvocacias/AdvocaciasList";
 import AdvocaciasForm from "./pages/BDAdvocacias/AdvocaciasForm";
 import TribunaisList from './pages/BDTribunais/TribunaisList';
@@ -21,22 +19,11 @@ import UsuariosList from './pages/BDUsuarios/UsuariosList';
 import UsuariosForm from './pages/BDUsuarios/UsuariosForm';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
-import Sobre from "./pages/Sobre";
 import Tribunaisindex from "./pages/Tribunais/Tribunaisindex";
-import TribunaisindexFeed from "./pages/Tribunais/Feedback/TribunaisindexFeed"
-import TribunaisForms from "./pages/Tribunais/Feedback/TribunaisForms"
 import Audienciasindex from "./pages/Audiencias/Audienciasindex"
-import  AudienciasindexFeed from "./pages/Audiencias/Feedback/AudienciasindexFeed";
-import AudienciasForms from "./pages/Audiencias/Feedback/AudienciasForms";
 import Mediacoesindex from "./pages/Mediacoes/Mediacoesindex";
-import MediacoesindexFeed from "./pages/Mediacoes/Feedback/MediacoesindexFeed";
-import MediacoesForms from "./pages/Mediacoes/Feedback/MediacoesForms";
 import Advocaciaindex  from "./pages/Advocacias/Advocaciasindex";
-import AdvocaciaindexFeed from "./pages/Advocacias/Feedback/AdvocaciaindexFeed"
-import  AdvocaciaForms from "./pages/Advocacias/Feedback/AdvocaciaForms";
 import Portaisindex  from "./pages/Portais/Portaisindex";
-import  PortaisindexFeed from "./pages/Portais/Feedback/PortaisindexFeed";
-import PortaisForms from "./pages/Portais/Feedback/PortaisForms";
 import FeedTribunais from "./pages/Home/FTribunais/FeedTribunais";
 import FeedForuns from "./pages/Home/FForuns/FeedForuns";
 import FeedAudiencias from "./pages/Home/FAudiencias/FeedAudiencias";
@@ -80,7 +67,6 @@ function App() {
         <Route path="/login"  element={<Login />}></Route>
         <Route path="/cadastro"   element={<Cadastro />}></Route>
         <Route path="/" element={ <Home /> }></Route>
-        <Route path="/info" element={ <Sobre/> }></Route>
         <Route path="/tribunais" element={ <Tribunaisindex/> }></Route>
         <Route path="/foruns" element={ <Forunsindex/> }></Route>
         <Route path="/juiz" element={ <Audienciasindex/> }></Route>
@@ -93,18 +79,6 @@ function App() {
         <Route path="/user/mediacoes" element={ <MediacoesindexL/> }></Route>
         <Route path="/user/advocacia" element={ <AdvocaciasindexL/> }></Route>
         <Route path="/user/portais" element={ <PortaisindexL/> }></Route>
-        <Route path="/user/dashboard/foruns/:id_forum/feedback" element={<ForunsindexFeed/>}></Route>
-        <Route path="/user/dashboard/foruns/:id_forum/feedback/add" element={<ForunsForms/>}></Route>
-        <Route path="/user/dashboard/tribunais/:id_tribunal/feedback/" element={<TribunaisindexFeed/>}></Route>
-        <Route path="/user/dashboard/tribunais/:id_tribunal/feedback/add" element={<TribunaisForms/>}></Route>
-        <Route path="/user/dashboard/mediacoes/:id_mediador/feedback/add" element={<MediacoesForms/>}></Route>
-        <Route path="/user/dashboard/mediacoes/:id_mediador/feedback/" element={<MediacoesindexFeed/>}></Route>
-        <Route path="/user/dashboard/audiencias/:id_juiz/feedback/add" element={<AudienciasForms/>}></Route>
-        <Route path="/user/dashboard/audiencias/:id_juiz/feedback/" element={<AudienciasindexFeed/>}></Route>
-        <Route path="/user/dashboard/advocacia/:id_advocacia/feedback/add" element={<AdvocaciaForms/>}></Route>
-        <Route path="/user/dashboard/advocacia/:id_advocacia/feedback/" element={<AdvocaciaindexFeed/>}></Route>
-        <Route path="/user/dashboard/portais/:id_portal/feedback/add" element={<PortaisForms/>}></Route>
-        <Route path="/user/dashboard/portais/:id_portal/feedback/" element={<PortaisindexFeed/>}></Route>
         <Route path="/tribunais/:id_tribunal/feedback/" element={<FeedTribunais/>}></Route>
         <Route path="/foruns/:id_forum/feedback/" element={<FeedForuns/>}></Route>
         <Route path="/juiz/:id_juiz/feedback/" element={<FeedAudiencias/>}></Route>

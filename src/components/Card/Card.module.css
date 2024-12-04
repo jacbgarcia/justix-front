@@ -19,7 +19,7 @@
     text-decoration: none;
     color: black;
     margin-bottom: 1.5rem;
-    font-size: 0.9rem; /* Slightly smaller font for mobile */
+    font-size: 0.9rem; 
   }
 
 .cardleft {
@@ -47,7 +47,7 @@
 
 .cardinfo {
     flex: 1;
-    min-width: 0; /* Prevents text overflow issues */
+    min-width: 0; 
 }
 
 .cardinfo h3 {
@@ -118,24 +118,24 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 0 16px; /* Ajuste opcional para dar um pouco de margem */
+    padding: 0 16px; 
 }
 
 select {
-    width: 100%; /* Ocupa 100% em telas pequenas */
-    max-width: 10rem; /* Limite de largura em telas maiores */
+    width: 100%; 
+    max-width: 10rem; 
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    transition: all 0.3s ease; /* Aplica uma transição suave a todas as propriedades */
+    transition: all 0.3s ease; 
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
 select:focus {
-    border-color: #4A90E2; /* Cor de borda ao focar */
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Efeito de sombra ao focar */
+    border-color: #4A90E2; 
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); 
 }
 .navlinkscontainer {
     width: 100%;
@@ -167,10 +167,9 @@ select:focus {
     padding: 10px;
   }
   
-  /* Menu mobile que será exibido no modo mobile */
   .mobileMenu {
     position: absolute;
-    top: 60px; /* Ajuste conforme o layout */
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: #fff;
@@ -279,43 +278,40 @@ select:focus {
 .navlinksl {
     text-decoration: none;
     color: black;
-    display: inline-flex; /* Melhor controle do layout */
+    display: inline-flex; 
     align-items: center;
     padding: 0.5rem;
-    margin-right: 0.75rem; /* Espaçamento entre links reduzido */
+    margin-right: 0.75rem;
     font-size: 0.95rem;
     transition: color 0.2s ease;
-    white-space: nowrap; /* Evita quebra de texto */
+    white-space: nowrap; 
 }
 .navlinks2 {
     text-decoration: none;
     color: black;
-    display: inline-flex; /* Melhor controle do layout */
+    display: inline-flex;
     align-items: center;
     padding: 0.5rem;
-    margin-right: 0.75rem; /* Espaçamento entre links reduzido */
+    margin-right: 0.75rem; 
     font-size: 0.95rem;
     transition: color 0.2s ease;
-    white-space: nowrap; /* Evita quebra de texto */
+    white-space: nowrap; 
 }
 
-/* Container para os links (caso necessário) */
 .navlinkscontainer {
     display: flex;
     margin-right: 45%;
     align-items: center;
-    gap: 0.5rem; /* Espaçamento reduzido entre os links */
-    flex-wrap: wrap; /* Permite quebra em telas menores */
+    gap: 0.5rem; 
+    flex-wrap: wrap; 
 }
 
-/* Hover state para desktop */
 @media (hover: hover) {
     .navlinksl:hover {
         color: #4169E1;
     }
 }
 
-/* Media Queries */
 @media screen and (max-width: 768px) {
     .navlinksl {
         padding: 0.4rem;
@@ -351,7 +347,6 @@ select:focus {
     }
 }
 
-/* Para telas muito pequenas */
 @media screen and (max-width: 360px) {
     .navlinksl {
         padding: 0.25rem;

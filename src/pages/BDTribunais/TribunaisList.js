@@ -1,4 +1,3 @@
-// src/pages/Tribunais/TribunaisListPage.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import TribunaisListPageO from '../../components/BD/TribunaisListPage';

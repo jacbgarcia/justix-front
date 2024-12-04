@@ -21,7 +21,6 @@ body {
   align-items: center;
 }
 
-/* Título e Botão Adicionar */
 .titulo {
   text-align: center;
   font-size: 1.75rem;
@@ -38,7 +37,6 @@ body {
   transition: color 0.2s ease;
 }
 
-/* Grid de Cards */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -46,7 +44,6 @@ body {
   width: 100%;
 }
 
-/* Card Individual */
 .card {
   background: white;
   border-radius: 12px;
@@ -93,7 +90,6 @@ body {
   color: #666;
 }
 
-/* Barra de Pesquisa */
 .search-section {
   width: 100%;
   max-width: 600px;
@@ -109,7 +105,6 @@ body {
   background: white;
 }
 
-/* Media Queries */
 @media screen and (max-width: 1024px) {
   .container {
       max-width: 900px;
@@ -166,7 +161,6 @@ body {
   }
 }
 
-/* Animações e Interações */
 .searchpa:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(65, 105, 225, 0.3);
@@ -187,7 +181,6 @@ body {
   }
 }
 
-/* Acessibilidade */
 @media (prefers-reduced-motion: reduce) {
   .card,
   .searchpa {

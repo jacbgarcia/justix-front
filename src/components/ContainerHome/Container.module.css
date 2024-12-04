@@ -19,9 +19,9 @@ body {
 }
 
 .illustration {
-  width: 100%;                 /* Ocupará toda a largura disponível */
-  max-width: 500px;            /* Largura máxima em telas maiores */
-  margin: 0 auto;              /* Centraliza o contêiner horizontalmente */
+  width: 100%;                 
+  max-width: 500px;            
+  margin: 0 auto;              
   background-color: white;
   border-radius: 20px;
   padding: 2rem;
@@ -34,23 +34,21 @@ body {
   height: auto;
 }
 
-/* Estilos responsivos para tablets */
 @media screen and (max-width: 768px) {
   .illustration {
-      padding: 1.5rem;        /* Reduz o padding para telas menores */
-      max-width: 400px;       /* Diminui a largura máxima em tablets */
+      padding: 1.5rem;        
+      max-width: 400px;      
   }
 }
 
-/* Estilos para dispositivos móveis */
 @media screen and (max-width: 480px) {
   .illustration {
-      padding: 1rem;          /* Reduz ainda mais o padding em dispositivos móveis */
-      max-width: 100%;        /* Garante que ocupe 100% da largura disponível */
-      border-radius: 15px;    /* Um pouco menos arredondado em telas menores */
+      padding: 1rem;          
+      max-width: 100%;        
+      border-radius: 15px;    
   }
   
   .maincontent {
-      margin: 1rem auto;     /* Ajusta a margem superior em telas pequenas */
+      margin: 1rem auto;     
   }
 }

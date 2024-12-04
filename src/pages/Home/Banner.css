@@ -1,8 +1,7 @@
 
   
 
-  /* Estilos principais */
-.banner {
+ .banner {
   width: 100%;
   min-height: 20rem;
   position: relative;
@@ -15,7 +14,6 @@
   padding: 2rem 1rem;
 }
 
-/* Gradiente animado com transform3d para melhor performance */
 .banner-gradient {
   position: absolute;
   inset: 0;
@@ -26,7 +24,6 @@
   transform: translate3d(0, 0, 0);
 }
 
-/* Ícones de fundo animados */
 .background-icon {
   position: absolute;
   color: rgba(255, 255, 255, 0.05);
@@ -45,7 +42,6 @@
   transform: translate3d(0, 0, 0);
 }
 
-/* Conteúdo principal */
 .banner-content {
   width: 100%;
   max-width: 1200px;
@@ -59,7 +55,6 @@
   padding: 0 1rem;
 }
 
-/* Responsividade para títulos */
 .banner-title {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: bold;
@@ -88,7 +83,6 @@
   transform: translateY(0);
 }
 
-/* Recursos responsivos */
 .banner-features {
   display: flex;
   justify-content: center;
@@ -118,7 +112,6 @@
   animation: bounce 2s infinite;
 }
 
-/* Barras animadas */
 .animated-bars {
   position: absolute;
   bottom: 0;
@@ -142,7 +135,7 @@
   animation: slide-right 3s linear infinite;
 }
 
-/* Animações otimizadas */
+
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -181,7 +174,7 @@
   animation: slide-left 3s linear infinite;
 }
 
-/* Media Queries para dispositivos menores */
+
 @media screen and (max-width: 768px) {
   span{
     font-size: smaller;

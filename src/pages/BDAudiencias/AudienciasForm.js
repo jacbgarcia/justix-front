@@ -1,4 +1,3 @@
-// src/pages/Tribunais/TribunaisFormPage.js
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import AudienciasFormPageO from '../../components/BD/AudienciasFormPage';
@@ -11,7 +10,7 @@ const AudienciasFormPage = () => {
   const juizAtivo = location.state?.juiz || null;
 
   const handleSave = async (juiz) => {
-    // Lógica de salvamento via API
+    
     navigate('/admin/dashboard/juiz');
   };
 

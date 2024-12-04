@@ -1,4 +1,3 @@
-// src/pages/portais/portaisFormPage.js
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import PortaisFormPageO from '../../components/BD/PortaisFormPage';
@@ -11,7 +10,7 @@ const PortaisFormPage = () => {
   const portaisAtivo = location.state?.portais || null;
 
   const handleSave = async (portais) => {
-    // Lógica de salvamento via API
+  
     navigate('/admin/dashboard/portais');
   };
 

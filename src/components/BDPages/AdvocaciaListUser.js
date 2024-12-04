@@ -20,10 +20,8 @@ const AdvocaciaListPageUser = () => {
       const advocaciaWithRatings = await Promise.all(
         res.data.map(async (advocacia) => {
           try {
-            // Buscar a média ponderada
             const ratingRes = await axios.get(`${API_BASE_URL}/advocacia_avaliacao/${advocacia.id_advocacia}`);
-            
-            // Buscar total de avaliações
+
             const avaliacoesRes = await axios.get(`${API_BASE_URL}/av_advocacia/${advocacia.id_advocacia}`);
             
             return {
@@ -64,15 +62,12 @@ const AdvocaciaListPageUser = () => {
     return isNaN(numRating) ? "0.0" : numRating.toFixed(1);
   };
 
-  // Função para filtrar advocacia baseado no termo de busca e filtro ativo
   const getFilteredAdvocacia = () => {
-    // Primeiro aplica o filtro de busca
     let filtered = advocacia.filter(advocacia => 
       advocacia.nome.toLowerCase().includes(searchTerm.toLowerCase()) || 
       advocacia.profissao.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Depois aplica o filtro de categoria
     switch (activeFilter) {
       case 'mais-avaliados':
         filtered = filtered.sort((a, b) => b.total_avaliacoes - a.total_avaliacoes);
@@ -80,7 +75,7 @@ const AdvocaciaListPageUser = () => {
       case 'melhor-classificacao':
         filtered = filtered.sort((a, b) => b.media_ponderada - a.media_ponderada);
         break;
-      default: // 'todos'
+      default:
         filtered = filtered.sort((a, b) => a.nome.localeCompare(b.nome));
         break;
     }

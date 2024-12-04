@@ -6,7 +6,7 @@ import style from '../Card/Card.module.css';
 const TribunaisListPageO = () => {
   const [tribunais, setTribunais] = useState([]);
   const [filteredTribunais, setFilteredTribunais] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(''); // Estado para o termo de busca
+  const [searchTerm, setSearchTerm] = useState(''); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const TribunaisListPageO = () => {
     try {
       const res = await axios.get('https://justix-back.vercel.app/tribunais');
       
-      // Buscar as avaliações atualizadas para cada tribunal
+      
       const tribunaisWithRatings = await Promise.all(
         res.data.map(async (tribunal) => {
           try {

@@ -1,4 +1,3 @@
-// src/pages/Foruns/ForunsList.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ForunsListPageO from '../../components/BD/ForunsListPage';

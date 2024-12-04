@@ -1,4 +1,3 @@
-// src/pages/Usuarios/UsuariosFormPage.js
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import UsuariosForm from './UsuariosForm';
@@ -9,7 +8,7 @@ const UsuariosFormPage = () => {
   const usuarioAtivo = location.state?.usuario || null;
 
   const handleSave = async (usuario) => {
-    // Lógica de salvamento via API
+    
     navigate('/usuarios');
   };
 

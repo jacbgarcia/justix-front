@@ -20,10 +20,8 @@ const PortaisListPageUser = () => {
       const portaisWithRatings = await Promise.all(
         res.data.map(async (portal) => {
           try {
-            // Buscar a média ponderada
             const ratingRes = await axios.get(`${API_BASE_URL}/portal_avaliacao/${portal.id_portal}`);
             
-            // Buscar total de avaliações
             const avaliacoesRes = await axios.get(`${API_BASE_URL}/av_portal/${portal.id_portal}`);
             
             return {
@@ -64,15 +62,12 @@ const PortaisListPageUser = () => {
     return isNaN(numRating) ? "0.0" : numRating.toFixed(1);
   };
 
-  // Função para filtrar portais baseado no termo de busca e filtro ativo
   const getFilteredPortais = () => {
-    // Primeiro aplica o filtro de busca
     let filtered = portais.filter(portal => 
       portal.nome.toLowerCase().includes(searchTerm.toLowerCase()) || 
       portal.url.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Depois aplica o filtro de categoria
     switch (activeFilter) {
       case 'mais-avaliados':
         filtered = filtered.sort((a, b) => b.total_avaliacoes - a.total_avaliacoes);
@@ -80,7 +75,7 @@ const PortaisListPageUser = () => {
       case 'melhor-classificacao':
         filtered = filtered.sort((a, b) => b.media_ponderada - a.media_ponderada);
         break;
-      default: // 'todos'
+      default: 
         filtered = filtered.sort((a, b) => a.nome.localeCompare(b.nome));
         break;
     }

@@ -172,26 +172,23 @@ function HeaderLggd({ children }) {
 
       useEffect(() => {
         const handleClickOutside = (event) => {
-            // Verifica se o clique foi dentro do sidebar
+            
             if (sidebarRef.current && sidebarRef.current.contains(event.target)) {
-                return; // Se for dentro do sidebar, não faz nada
+                return; 
             }
 
-            // Se for fora do sidebar, fecha tudo
             if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
                 setIsSidebarOpen(false);
                 setIsOpen(false);
                 setShowOverlay(false);
             }
 
-            // Verifica se clicou fora do menu de busca
             if (searchRef.current && !searchRef.current.contains(event.target)) {
                 setIsMenuOpen(false);
                 setSearchResults([]);
             }
         };
 
-        // Adiciona o listener quando o overlay está ativo
         if (showOverlay || isMenuOpen) {
             document.addEventListener('mousedown', handleClickOutside);
         }
@@ -224,7 +221,6 @@ function HeaderLggd({ children }) {
         setIsMobileSearchOptionsOpen(false);
     };
 
-    // UserPanel component para o sidebar
     const UserPanel = () => (
         <div 
             className={isMobile ? styles.mobilePopup : styles.sidebarContent}

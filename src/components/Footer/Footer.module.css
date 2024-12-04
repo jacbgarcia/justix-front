@@ -11,15 +11,15 @@
     background-color: #D9D9D9;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     font-weight: bold;
-    z-index: 1000;  /* Garante que o footer fique sobre outros elementos */
+    z-index: 1000;  
     transition: all 0.3s ease; 
 }
 
-/* Estilos responsivos para tablets */
+
 @media screen and (max-width: 768px) {
     .footbar {
-        height: auto;  /* Ajusta a altura conforme necessário */
-        padding: 0.8rem 1rem;  /* Aumenta o padding para melhorar o espaçamento */
+        height: auto; 
+        padding: 0.8rem 1rem; 
         font-size: 0.9rem;
         bottom: 0;
         position:sticky;
@@ -29,12 +29,11 @@
     }
 }
 
-/* Estilos responsivos para dispositivos móveis */
 @media screen and (max-width: 480px) {
     .footbar {
-        height: auto;  /* Deixa a altura flexível para dispositivos móveis */
-        padding: 0.6rem 0.8rem;  /* Reduz o padding lateral */
-        font-size: 0.7rem;  /* Diminui o tamanho da fonte para ser mais legível em telas pequenas */
-        text-align: center;  /* Centraliza o texto no footer */
+        height: auto;  
+        padding: 0.6rem 0.8rem;  
+        font-size: 0.7rem; 
+        text-align: center; 
     }
 }

@@ -20,10 +20,8 @@ const MediacoesListPageUser = () => {
       const mediadorWithRatings = await Promise.all(
         res.data.map(async (mediador) => {
           try {
-            // Buscar a média ponderada
             const ratingRes = await axios.get(`${API_BASE_URL}/mediador_avaliacao/${mediador.id_mediador}`);
             
-            // Buscar total de avaliações
             const avaliacoesRes = await axios.get(`${API_BASE_URL}/av_mediador/${mediador.id_mediador}`);
             
             return {
@@ -64,15 +62,12 @@ const MediacoesListPageUser = () => {
     return isNaN(numRating) ? "0.0" : numRating.toFixed(1);
   };
 
-  // Função para filtrar mediador baseado no termo de busca e filtro ativo
   const getFilteredMediacoes = () => {
-    // Primeiro aplica o filtro de busca
     let filtered = mediador.filter(mediador => 
       mediador.nome.toLowerCase().includes(searchTerm.toLowerCase()) || 
       mediador.estado.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Depois aplica o filtro de categoria
     switch (activeFilter) {
       case 'mais-avaliados':
         filtered = filtered.sort((a, b) => b.total_avaliacoes - a.total_avaliacoes);
@@ -80,7 +75,7 @@ const MediacoesListPageUser = () => {
       case 'melhor-classificacao':
         filtered = filtered.sort((a, b) => b.media_ponderada - a.media_ponderada);
         break;
-      default: // 'todos'
+      default: 
         filtered = filtered.sort((a, b) => a.nome.localeCompare(b.nome));
         break;
     }
